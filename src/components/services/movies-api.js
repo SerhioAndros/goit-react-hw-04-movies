@@ -20,9 +20,11 @@ const fetchMoviesByRequest = ({ page = 1, searchQuery = "" }) => {
 };
 
 const fetchMovieDetailedInfo = (id) => {
-  return axios.get(
-    `${BASE_URL}/movie/${id}?api_key=${API_KEY}&append_to_response=credits,images,reviews`
-  );
+  return axios
+    .get(
+      `${BASE_URL}/movie/${id}?api_key=${API_KEY}&append_to_response=credits,images,reviews`
+    )
+    .then((resp) => resp.data);
 };
 
 export { fetchPopularMovies, fetchMoviesByRequest, fetchMovieDetailedInfo };

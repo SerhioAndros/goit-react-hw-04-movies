@@ -41,6 +41,8 @@ class Movies extends Component {
   };
 
   render() {
+    console.log(this.props.match.url);
+
     return (
       <>
         <SearchForm onSubmit={this.handleSearchQuery} />

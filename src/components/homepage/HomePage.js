@@ -11,11 +11,12 @@ class HomePage extends Component {
     );
   };
   render() {
+    console.log(this.props.match.url);
     return (
       <ul>
         {this.state.moviesList.map((movie) => (
           <li key={movie.id}>
-            <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
+            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
           </li>
         ))}
       </ul>
