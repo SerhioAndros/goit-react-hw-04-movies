@@ -11,7 +11,6 @@ class HomePage extends Component {
     );
   };
   render() {
-    console.log(this.props.match.url);
     return (
       <ul>
         {this.state.moviesList.map((movie) => (

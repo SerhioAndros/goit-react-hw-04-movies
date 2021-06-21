@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Button from "../button/Button";
-import MoviesList from "../moviesList/MoviesList";
-import SearchForm from "../searchForm/SearchForm";
+import MoviesList from "./moviesList/MoviesList";
+import SearchForm from "./searchForm/SearchForm";
 import { fetchMoviesByRequest } from "../services/movies-api";
+import PropTypes from "prop-types";
 
 class Movies extends Component {
   state = {
@@ -41,18 +42,21 @@ class Movies extends Component {
   };
 
   render() {
-    console.log(this.props.match.url);
-
+    const { searchMoviesList } = this.state;
     return (
       <>
         <SearchForm onSubmit={this.handleSearchQuery} />
-        <MoviesList movies={this.state.searchMoviesList} />
-        {!!this.state.searchMoviesList.length && (
+        <MoviesList movies={searchMoviesList} />
+        {!!searchMoviesList.length && (
           <Button btnName={"Load more"} btnFunction={this.loadMore} />
         )}
       </>
     );
   }
 }
+
+Movies.propTypes = {
+  searchRequest: PropTypes.string,
+};
 
 export default Movies;
