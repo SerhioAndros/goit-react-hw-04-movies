@@ -1,4 +1,6 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+
 import PropTypes from "prop-types";
 
 const Reviews = ({ reviews }) => {
@@ -35,4 +37,4 @@ Reviews.propTypes = {
   ),
 };
 
-export default Reviews;
+export default withRouter(Reviews);

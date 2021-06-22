@@ -1,10 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const MoviesListItem = ({ id, title }) => (
+const MoviesListItem = ({ id, title, location }) => (
   <li>
-    <Link to={`/movies/${id}`}>{title}</Link>
+    <Link to={{ pathname: `/movies/${id}`, state: { from: location } }}>
+      {title}
+    </Link>
   </li>
 );
 
@@ -13,4 +15,4 @@ MoviesListItem.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default MoviesListItem;
+export default withRouter(MoviesListItem);

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
 const Cast = ({ movieActors }) => {
   return (
@@ -42,4 +43,4 @@ Cast.propTypes = {
   ),
 };
 
-export default Cast;
+export default withRouter(Cast);
