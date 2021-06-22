@@ -1,0 +1,25 @@
+.MovieInfoWrapper {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+  align-items: initial;
+  margin: 10px 0;
+}
+
+.AdditionalWrapper {
+  width: 100%;
+  background-color: rgb(239, 240, 241);
+  display: flex;
+  flex-direction: column;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+}
+
+.AdditionalWrapper p {
+  font-weight: bolder;
+}
+
+.List li:not(:last-child) {
+  margin-bottom: 10px;
+}

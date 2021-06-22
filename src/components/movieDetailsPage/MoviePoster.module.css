@@ -1,0 +1,9 @@
+.PosterWrapper {
+  width: 300px;
+  height: 400px;
+  margin-right: 30px;
+}
+
+.PosterImg {
+  display: block;
+}

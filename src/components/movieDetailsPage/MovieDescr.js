@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./MovieDescr.module.css";
+
 
 const MovieDescr = ({
   title,
@@ -10,7 +12,7 @@ const MovieDescr = ({
   genres,
 }) => {
   return (
-    <div>
+    <div className={styles.DescrWrapper}>
       <h1>
         {title} <span>({release.slice(0, 4)})</span>
       </h1>
@@ -21,7 +23,7 @@ const MovieDescr = ({
       <h2>Overview</h2>
       <p>{overview}</p>
       <h3>Genres</h3>
-      <ul>
+      <ul className={styles.Genres}>
         {genres.map((genre) => (
           <li key={genre.id}>{genre.name}</li>
         ))}

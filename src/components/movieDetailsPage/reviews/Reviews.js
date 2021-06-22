@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import styles from "./Reviews.module.css";
 
 import PropTypes from "prop-types";
 
@@ -7,7 +8,7 @@ const Reviews = ({ reviews }) => {
   return (
     <>
       {!reviews.length && (
-        <p>
+        <p className={styles.Unexpected}>
           There are no reviews! Be the first one at{" "}
           <a href="https://www.themoviedb.org/" target="blank">
             TMDB
@@ -15,11 +16,11 @@ const Reviews = ({ reviews }) => {
         </p>
       )}
       {!!reviews.length && (
-        <ul>
+        <ul className={styles.List}>
           {reviews.map((review) => (
             <li key={review.id}>
-              <p>Author: {review.author}</p>
-              <p>{review.content}</p>
+              <p className={styles.Author}>Author: {review.author}</p>
+              <p className={styles.Text}>{review.content}</p>
             </li>
           ))}
         </ul>
