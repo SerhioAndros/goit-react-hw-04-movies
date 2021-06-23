@@ -12,6 +12,15 @@ class Movies extends Component {
     page: 1,
   };
 
+  componentDidMount() {
+    const { location } = this.props;
+    const queryStr = new URLSearchParams(location.search);
+    const query = queryStr.get("query");
+    if (query) {
+      this.setState({ searchQuery: query });
+    }
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (prevState.searchQuery !== this.state.searchQuery) {
       this.handleAddMovies();
@@ -30,6 +39,8 @@ class Movies extends Component {
   };
 
   handleSearchQuery = (searchRequest) => {
+    const { history } = this.props;
+    history.push(`/movies?query=${searchRequest}`);
     this.setState({
       searchQuery: searchRequest,
       page: 1,

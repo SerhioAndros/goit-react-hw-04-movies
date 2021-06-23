@@ -35,8 +35,8 @@ class MovieDetailsPage extends Component {
 
   handleReturn = () => {
     const { history, location } = this.props;
-    if (location.state && location.state.from) {
-      return history.push(location.state.from);
+    if (location.from) {
+      return history.push(`${location.from.pathname}${location.from.search}`);
     }
     return history.push(`/`);
   };
